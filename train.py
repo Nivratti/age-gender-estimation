@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 import multiprocessing
 import pandas as pd
@@ -36,8 +37,15 @@ def main(cfg):
                       loss=["sparse_categorical_crossentropy", "sparse_categorical_crossentropy"],
                       metrics=['accuracy'])
 
-    checkpoint_dir = Path(to_absolute_path(__file__)).parent.joinpath("checkpoint")
+    dir_parent_checkpoint = "/content/drive/My Drive/deep_learning/age-gender-estimation"
+    if os.path.exists(dir_parent_checkpoint):
+        checkpoint_dir = Path(dir_parent_checkpoint).joinpath("checkpoint")
+    else:
+        checkpoint_dir = Path(to_absolute_path(__file__)).parent.joinpath("checkpoint")
+
     checkpoint_dir.mkdir(exist_ok=True)
+    print(f"checkpoint_dir: {checkpoint_dir}")
+    
     filename = "_".join([cfg.model.model_name,
                          str(cfg.model.img_size),
                          "weights.{epoch:02d}-{val_loss:.2f}.hdf5"])
