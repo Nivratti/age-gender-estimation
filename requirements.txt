@@ -12,3 +12,9 @@ scikit-learn
 albumentations
 omegaconf
 gdown
+
+# repo to get efficientnet models
+# reason to use 3rd party
+# efficientnet models loaded from qubvel/efficientnet are working properly in opencv dnn
+# model trained with official keras efficientnet has issue loading freezed model in opencv
+efficientnet
