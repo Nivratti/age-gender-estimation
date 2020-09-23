@@ -3,7 +3,7 @@ mkdir -p data
 cd data
 
 if [ ! -f imdb_crop.tar ]; then
-    wget https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/static/imdb_crop.tar
+    gdown https://drive.google.com/uc?id=1-dVb_VtYECBQFA6urXmnVHhnhAOCnQVo -O imdb_crop.tar
 fi
 
 if [ ! -d imdb_crop ]; then
@@ -11,7 +11,7 @@ if [ ! -d imdb_crop ]; then
 fi
 
 if [ ! -f wiki_crop.tar ]; then
-    wget https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/static/wiki_crop.tar
+    gdown https://drive.google.com/uc?id=1-eKaAxm_bp9Zb4ayo04sXsghu-oleML8 -O wiki_crop.tar
 fi
 
 if [ ! -d wiki_crop ]; then
